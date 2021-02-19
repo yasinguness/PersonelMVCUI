@@ -11,16 +11,37 @@ namespace PersonelMVCUI.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Personel
     {
         public int Id { get; set; }
+
+        [Display(Name ="Departman Adý")]
+        [Required(ErrorMessage ="Lütfen Bir Departman Seçiniz")]
         public Nullable<int> DepartmanId { get; set; }
+        [Required(ErrorMessage = "Ad Alaný Zorunludur")]
         public string Ad { get; set; }
+        [Required(ErrorMessage = "Soyad Alaný Zorunludur")]
         public string Soyad { get; set; }
+
+
+        [Display(Name = "Maaþ")]
+        [Range(1399,8000)]
         public Nullable<short> Maas { get; set; }
+
+        [Display(Name = "Doðum Tarihi")]
+
+        [Required(ErrorMessage = "Lütfen Doðum Tarihi Seçiniz")]
         public Nullable<System.DateTime> DogumTarihi { get; set; }
+
+        [Required(ErrorMessage = "Lütfen Cinsiyet Belirtiniz")]
         public bool Cinsiyet { get; set; }
+
+
+        [Display(Name = "Medeni Durumu")]
+
+        [Required(ErrorMessage = "Lütfen Medeni Halinizi Belirtiniz")]
         public bool EvliMi { get; set; }
     
         public virtual Departman Departman { get; set; }

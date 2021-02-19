@@ -23,9 +23,15 @@ namespace PersonelMVCUI.Controllers
             return View("DepartmanForm");
         }
 
-        [HttpPost]
+
+        //CSRF
+        
         public ActionResult Kaydet(Departman departman)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanForm");
+            }
             if (departman.Id==0)
             {
                 db.Departman.Add(departman);

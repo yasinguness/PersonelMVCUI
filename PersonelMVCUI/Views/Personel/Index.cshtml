@@ -13,9 +13,10 @@
             <th>Soyad</th>
             <th>Departman</th>
             <th>Maaş</th>
-            <th>Doğum Tarihi</th>
             <th>Cinsiyet</th>
             <th>Evlilik Durumu</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
 
         </tr>
     </thead>
@@ -27,9 +28,11 @@
             <td>@personel.Soyad</td>
             <td>@personel.DepartmanId</td>
             <td>@personel.Maas</td>
-            <td>@(DateTime.Now.Year-personel.DogumTarihi.Value.Year)</td>
+
             <td>@(personel.Cinsiyet==true?"Erkek":"Kadın")</td>
             <td>@(personel.EvliMi==true?"Evet":"Hayır")</td>
+            <td>@Html.ActionLink("Güncelle", "Güncelle", new { id = personel.Id }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Sil", "Sil", new { id = personel.Id }, new { @class = "btn btn-danger" })</td>
         </tr>
 
         }

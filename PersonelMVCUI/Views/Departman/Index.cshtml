@@ -6,7 +6,7 @@
 }
 <a class="btn btn-success" href="/Departman/Yeni">Yeni Departman</a>
 <h2>Departman Listesi</h2>
-<table class="table table-bordered">
+<table class="table table-bordered" id="tblDepartmanlar">
     <thead>
         <tr>
             <th>ID</th>
@@ -22,7 +22,7 @@
             <td>@departman.Id</td>
             <td>@departman.Ad</td>
             <td><a class="btn btn-primary" href="/Departman/Guncelle/@departman.Id">Güncelle</a></td>
-            <td><a class="btn btn-warnin "href="/Departman/Sil/@departman.Id">Sil</a></td>
+            <td><a class="btn btn-warnin btnDepartmansil" data-id="@departman.Id">Sil</a></td>
         </tr>
         }
     </tbody>
